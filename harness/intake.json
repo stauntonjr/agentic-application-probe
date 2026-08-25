@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0",
+  "mode": "new",
+  "captured_at": "2026-08-25T15:50:19Z",
+  "answers": {
+    "project.name": {
+      "value": "Agentic Application Probe",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "project.summary": {
+      "value": "A small deterministic CSV summary CLI used to measure greenfield delivery through the agentic project template.",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "project.repository": {
+      "value": "stauntonjr/agentic-application-probe",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "project.profile": {
+      "value": "python-data",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "intent.users": {
+      "value": [
+        "maintainer",
+        "data analyst"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "intent.outcomes": {
+      "value": [
+        "Summarize a local CSV file as deterministic JSON"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "intent.success_metrics": {
+      "value": [
+        "Normal and malformed CSV behavior is tested",
+        "The repository authoritative check passes"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "intent.in_scope": {
+      "value": [
+        "UTF-8 CSV input",
+        "Row count",
+        "Column names",
+        "Missing-value counts",
+        "JSON stdout"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "intent.out_of_scope": {
+      "value": [
+        "Network access",
+        "CSV dialect inference",
+        "Streaming-scale files",
+        "Data cleaning",
+        "Deployment"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "constraints.data_classification": {
+      "value": "public",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "constraints.deployment": {
+      "value": "local CLI only",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "constraints.licenses": {
+      "value": [
+        "MIT"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "engineering.versioning.strategy": {
+      "value": "semver",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "engineering.versioning.current": {
+      "value": "0.1.0",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "engineering.versioning.public_contract": {
+      "value": [
+        "csv-summary command-line JSON output"
+      ],
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "engineering.versioning.source": {
+      "value": "harness/project.yaml:engineering.versioning.current",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    },
+    "autonomy.level": {
+      "value": "supervised",
+      "status": "confirmed",
+      "source": "/tmp/application-probe-answers.json",
+      "recorded_at": "2026-08-25T15:50:19Z"
+    }
+  },
+  "contradictions": [],
+  "missing_essential_fields": [],
+  "context_readiness": "sufficient"
+}

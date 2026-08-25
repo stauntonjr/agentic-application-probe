@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "harness_version": "0.5.0",
+  "template_mode": false,
+  "project": {
+    "name": "Agentic Application Probe",
+    "summary": "A small deterministic CSV summary CLI used to measure greenfield delivery through the agentic project template.",
+    "lifecycle": "new",
+    "profile": "python-data",
+    "status": "active",
+    "repository": "stauntonjr/agentic-application-probe"
+  },
+  "intent": {
+    "users": [
+      "maintainer",
+      "data analyst"
+    ],
+    "outcomes": [
+      "Summarize a local CSV file as deterministic JSON"
+    ],
+    "success_metrics": [
+      "Normal and malformed CSV behavior is tested",
+      "The repository authoritative check passes"
+    ],
+    "in_scope": [
+      "UTF-8 CSV input",
+      "Row count",
+      "Column names",
+      "Missing-value counts",
+      "JSON stdout"
+    ],
+    "out_of_scope": [
+      "Network access",
+      "CSV dialect inference",
+      "Streaming-scale files",
+      "Data cleaning",
+      "Deployment"
+    ]
+  },
+  "constraints": {
+    "security": [
+      "No secrets in the repository"
+    ],
+    "data_classification": "public",
+    "deployment": "local CLI only",
+    "budget": "TBD",
+    "licenses": [
+      "MIT"
+    ]
+  },
+  "engineering": {
+    "languages": [
+      "Python"
+    ],
+    "build_commands": [
+      "uv build"
+    ],
+    "test_commands": [
+      "uv run pytest"
+    ],
+    "command_contract": {
+      "primary_check": "make smoke",
+      "bootstrap": "uv sync --locked",
+      "format_check": "uvx --from ruff==0.12.10 ruff format --check .",
+      "lint": "uvx --from ruff==0.12.10 ruff check .",
+      "typecheck": "uvx --from pyright==1.1.403 pyright",
+      "unit": "uv run --with pytest==8.4.1 --with pytest-cov==6.2.1 --with hypothesis==6.138.13 python -m pytest --cov=. --cov-branch --cov-report=term-missing -m 'not integration'",
+      "integration": "uv run --with pytest==8.4.1 python -m pytest -m integration",
+      "package_smoke": "not-applicable: configure when a Python product artifact exists"
+    },
+    "quality": {
+      "dependency_lock": "uv.lock",
+      "coverage_policy": "branch-coverage-baseline-required-before-release",
+      "required_checks": [
+        "format_check",
+        "lint",
+        "typecheck",
+        "unit"
+      ],
+      "property_testing": "hypothesis"
+    },
+    "versioning": {
+      "strategy": "semver",
+      "current": "0.1.0",
+      "public_contract": [
+        "csv-summary command-line JSON output"
+      ],
+      "source": "harness/project.yaml:engineering.versioning.current",
+      "tag_prefix": "v",
+      "pre_1_0_policy": "breaking-changes-bump-minor",
+      "release_notes": "CHANGELOG.md"
+    },
+    "architecture_changes_require_adr": true,
+    "public_interface_acceptance_required": true
+  },
+  "autonomy": {
+    "level": "supervised",
+    "network_writes": "explicit-human-approval",
+    "destructive_actions": "explicit-human-approval",
+    "release": "human-only",
+    "policy_changes": "human-review"
+  },
+  "sources_of_truth": [
+    {
+      "rank": 1,
+      "source": "accepted ADRs",
+      "scope": "durable architecture decisions"
+    },
+    {
+      "rank": 2,
+      "source": "code and schemas",
+      "scope": "implemented behavior"
+    },
+    {
+      "rank": 3,
+      "source": "tests and check evidence",
+      "scope": "verified behavior"
+    },
+    {
+      "rank": 4,
+      "source": "GitHub Issues",
+      "scope": "accepted work and acceptance criteria"
+    },
+    {
+      "rank": 5,
+      "source": "GitHub Project",
+      "scope": "operational planning view"
+    },
+    {
+      "rank": 6,
+      "source": "handoff and reports",
+      "scope": "orientation and derived status"
+    }
+  ],
+  "github": {
+    "issues_are_canonical_work_items": true,
+    "project_enabled": true,
+    "planning_contract": ".github/planning.json",
+    "security": {
+      "dependency_updates": "dependabot",
+      "dependency_review": "required",
+      "code_scanning": "codeql",
+      "secret_scanning": "required",
+      "push_protection": "required",
+      "workflow_permissions": "least-privilege",
+      "action_pinning": "full-commit-sha"
+    }
+  },
+  "open_questions": [],
+  "decisions": []
+}
