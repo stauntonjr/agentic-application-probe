@@ -1,16 +1,22 @@
 [project]
-name = "agentic-project-template"
-version = "0.4.1"
-description = "A reusable engineering harness for agent-developed projects"
+name = "agentic-application-probe"
+version = "0.1.0"
+description = "Deterministic CSV summary CLI used for a greenfield harness proof"
+readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
+dependencies = []
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
 
+[tool.pyright]
+include = ["src", "tests/test_application_probe.py"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src"]
 
 [tool.coverage.run]
 branch = true

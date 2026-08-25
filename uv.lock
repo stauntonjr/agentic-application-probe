@@ -3,6 +3,6 @@ revision = 3
 requires-python = ">=3.11"
 
 [[package]]
-name = "agentic-project-template"
-version = "0.4.1"
+name = "agentic-application-probe"
+version = "0.1.0"
 source = { virtual = "." }
